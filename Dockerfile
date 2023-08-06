@@ -10,7 +10,7 @@ ARG GCC_VERSION=8.2.0
 RUN set -x 
 RUN apt-get update
 RUN apt-get install -y wget gcc libgmp3-dev libmpfr-dev libisl-dev 
-RUN libcloog-isl-dev libmpc-dev texinfo bison flex make bzip2 
+RUN libmpc-dev texinfo bison flex make bzip2 
 RUN patch build-essential
 
 # Pull binutils and gcc source code
