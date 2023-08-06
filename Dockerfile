@@ -11,7 +11,7 @@ RUN set -x
 RUN apt-get update
 RUN apt-get install -y wget gcc libgmp3-dev libmpfr-dev libisl-dev 
 RUN apt-get install -y libmpc-dev texinfo bison flex make bzip2 
-RUN apt-get install -y patch build-essential curl
+RUN apt-get install -y patch build-essential curl sudo
 RUN curl -sLO http://archive.ubuntu.com/ubuntu/pool/universe/c/cloog/libcloog-isl-dev_0.18.4-2_amd64.deb && sudo dpkg -i libcloog-isl-dev_0.18.4-2_amd64.deb
 
 # Pull binutils and gcc source code
