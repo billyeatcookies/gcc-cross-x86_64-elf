@@ -1,6 +1,6 @@
 # gcc 8.2.0 x86_64-elf cross-compiler container
 
-FROM ubuntu:bionic-20220301
+FROM ubuntu
 LABEL maintainer "Brett Vickers <github.com/beevik>"
 
 ARG BINUTILS_VERSION=2.31.1
@@ -12,7 +12,7 @@ RUN apt-get update
 RUN apt-get install -y wget gcc libgmp3-dev libmpfr-dev libisl-dev 
 RUN apt-get install -y libmpc-dev texinfo bison flex make bzip2 
 RUN apt-get install -y patch build-essential curl sudo
-RUN curl -sLO http://archive.ubuntu.com/ubuntu/pool/universe/c/cloog/libcloog-isl-dev_0.18.4-2_amd64.deb && sudo dpkg -i libcloog-isl-dev_0.18.4-2_amd64.deb
+RUN curl -sLO http://archive.ubuntu.com/ubuntu/pool/universe/c/cloog/libcloog-isl4_0.18.4-2_amd64.deb && sudo dpkg -i libcloog-isl4_0.18.4-2_amd64.deb
 
 # Pull binutils and gcc source code
 RUN set -x \
