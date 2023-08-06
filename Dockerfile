@@ -7,11 +7,11 @@ ARG BINUTILS_VERSION=2.31.1
 ARG GCC_VERSION=8.2.0
 
 # Install cross-compiler prerequisites
-RUN set -x \
-	&& apt-get update \
-	&& apt-get install -y wget gcc libgmp3-dev libmpfr-dev libisl-dev \
-		libcloog-isl-dev libmpc-dev texinfo bison flex make bzip2 patch \
-		build-essential
+RUN set -x 
+RUN apt-get update
+RUN apt-get install -y wget gcc libgmp3-dev libmpfr-dev libisl-dev 
+RUN libcloog-isl-dev libmpc-dev texinfo bison flex make bzip2 
+RUN patch build-essential
 
 # Pull binutils and gcc source code
 RUN set -x \
