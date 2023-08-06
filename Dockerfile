@@ -1,19 +1,14 @@
-# gcc 8.2.0 x86_64-elf cross-compiler container
+FROM debian:latest
+LABEL maintainer "billyeatcookies"
 
-FROM ubuntu
-LABEL maintainer "Brett Vickers <github.com/beevik>"
+ARG BINUTILS_VERSION=2.41
+ARG GCC_VERSION=13.2.0
 
-ARG BINUTILS_VERSION=2.31.1
-ARG GCC_VERSION=8.2.0
-
-# Install cross-compiler prerequisites
 RUN set -x 
 RUN apt-get update
-RUN apt-get install -y wget gcc libgmp3-dev libmpfr-dev libisl-dev 
-RUN apt-get install -y libmpc-dev texinfo bison flex make bzip2 
-RUN apt-get install -y patch build-essential curl sudo
+RUN apt-get install -y wget curl sudo
+RUN apt-get install -y build-essential bison flex libgmp3-dev libmpc-dev libmpfr-dev texinfo 
 
-# Pull binutils and gcc source code
 RUN set -x \
 	&& mkdir -p /usr/local/src \
 	&& cd /usr/local/src \
