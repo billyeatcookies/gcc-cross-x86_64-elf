@@ -1,6 +1,6 @@
 # gcc 8.2.0 x86_64-elf cross-compiler container
 
-FROM ubuntu:17.10
+FROM ubuntu:bionic-20220301
 LABEL maintainer "Brett Vickers <github.com/beevik>"
 
 ARG BINUTILS_VERSION=2.31.1
